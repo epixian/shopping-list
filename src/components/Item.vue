@@ -80,7 +80,7 @@ export default {
     },
     saveItem() {
       this.myItem = this.myItem.trim();
-      if (this.myItem !== '') {
+      if (this.myItem !== '' && this.$store.state.items.indexOf(this.myItem) === -1) {
         this.editing = false;
         this.$store.commit('editItem', { old: this.originalItem, new: this.myItem });
         // reset myItem to the passed-in prop item in case the edit was rejected

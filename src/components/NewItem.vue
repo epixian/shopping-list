@@ -21,7 +21,7 @@ export default {
   methods: {
     addItem() {
       this.item = this.item.trim();
-      if (this.item !== '') {
+      if (this.item !== '' && this.$store.state.items.indexOf(this.item) === -1) {
         this.$store.commit('addItem', this.item);
         this.item = '';
       }
