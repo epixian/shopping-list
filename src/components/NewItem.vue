@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center">
+  <div class="flex items-center" :class="{ 'animate__animated animate__headShake': rejected }">
     <span class="flex-1 rounded-md shadow-sm">
       <input v-on:keyup.enter="addItem" v-model="item" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Add an item" />
     </span>
@@ -15,6 +15,7 @@ export default {
   data() {
     return {
       item: '',
+      rejected: false,
     }
   },
   methods: {
@@ -24,6 +25,15 @@ export default {
         this.$store.commit('addItem', this.item);
         this.item = '';
       }
+      else {
+        this.rejectInput();
+      }
+    },
+    rejectInput() {
+      this.rejected = true;
+      setTimeout(() => {
+        this.rejected = false;
+      }, 500);
     }
   }
 }

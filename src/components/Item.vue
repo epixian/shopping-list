@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center">
+  <div class="flex items-center" :class="{ 'animate__animated animate__headShake': rejected }">
 
     <!-- Item name / inputs -->
     <div v-if="removing" class="flex-1 font-medium p-2 sm:text-sm sm:leading-5 text-red-500">
@@ -60,6 +60,7 @@ export default {
       originalItem: '',
       editing: false,
       removing: false,
+      rejected: false,
     }
   },
   watch: {
@@ -78,11 +79,17 @@ export default {
       this.editing = false;
     },
     saveItem() {
-      this.editing = false;
-      this.$store.commit('editItem', { old: this.originalItem, new: this.myItem });
-
-      // reset myItem to the passed-in prop item in case the edit was rejected
-      this.myItem = this.item;
+      this.myItem = this.myItem.trim();
+      if (this.myItem !== '') {
+        this.editing = false;
+        this.$store.commit('editItem', { old: this.originalItem, new: this.myItem });
+        // reset myItem to the passed-in prop item in case the edit was rejected
+        this.myItem = this.item;
+      }
+      else {
+        this.rejectInput();
+        this.myItem = this.originalItem;
+      }
     },
     removeItem() {
       this.removing = true;
@@ -90,6 +97,12 @@ export default {
     removeItemConfirmed() {
       this.$store.commit('removeItem', this.myItem);
       this.removing = false;
+    },
+    rejectInput() {
+      this.rejected = true;
+      setTimeout(() => {
+        this.rejected = false;
+      }, 500);
     }
   },
   created() {

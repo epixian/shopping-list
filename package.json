@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@tailwindcss/ui": "^0.3.0",
+    "animate.css": "^4.1.0",
     "core-js": "^3.6.4",
     "tailwindcss": "^1.4.6",
     "vue": "^2.6.11",

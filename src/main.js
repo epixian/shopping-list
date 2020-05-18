@@ -4,6 +4,8 @@ import App from './App.vue';
 import './style.css';
 import store from './store'
 
+import 'animate.css';
+
 Vue.config.productionTip = false;
 
 new Vue({
