@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="mx-auto max-w-md">
+  <div id="app" class="font-sans mx-auto max-w-md">
     <h1 class="text-center font-bold text-xl">A simple shopping list</h1>
     <div class="space-y-2 p-4">
       <Item v-for="(item, index) in items" :key="index" :item="item" />
