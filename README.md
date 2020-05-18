@@ -1,15 +1,17 @@
 # shopping-cart
 
-A simple shopping list made with [Vue.js](https://vuejs.org/), [Heroicons](https://github.com/refactoringui/heroicons), and [TailwindCSS](https://tailwindcss.com/).
+A simple shopping list made with [Vue.js](https://vuejs.org/), [Heroicons](https://github.com/refactoringui/heroicons), and [TailwindCSS](https://tailwindcss.com/), with a little help from [Animate.css](https://animate.style/).
 
 ## Features
 
 * Add new items
-  * New items will not be added if they are already in the list
 * Edit items
-  * Rejects edits that might cause duplicates
 * Remove items
   * Confirm step prevents accidental item removal
+
+* Rejects
+  * entries already in the list
+  * blank entries or entries consisting only of whitespace
 
 ## Project setup
 ```
