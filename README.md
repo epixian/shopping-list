@@ -9,10 +9,9 @@ A simple shopping list made with [Vue.js](https://vuejs.org/), [Heroicons](https
 * Remove items
   * Confirm step prevents accidental item removal
 
-* Rejects:
+* Rejects
   * entries already in the list
   * entries consisting only of whitespace
-  * duplicate entries
 
 ## Project setup
 ```
