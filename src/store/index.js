@@ -20,7 +20,7 @@ export default new Vuex.Store({
         Vue.set(state.items, state.items.indexOf(data.old), data.new);
     },
     removeItem(state, data) {
-      state.items.splice(state.items.indexOf(data));
+      state.items.splice(state.items.indexOf(data), 1);
     }
   },
 })

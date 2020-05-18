@@ -89,6 +89,7 @@ export default {
     },
     removeItemConfirmed() {
       this.$store.commit('removeItem', this.myItem);
+      this.removing = false;
     }
   },
   created() {
