@@ -11,7 +11,7 @@ A simple shopping list made with [Vue.js](https://vuejs.org/), [Heroicons](https
 
 * Rejects
   * entries already in the list
-  * entries consisting only of whitespace
+  * blank entries or entries consisting only of whitespace
 
 ## Project setup
 ```
