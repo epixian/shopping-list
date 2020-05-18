@@ -9,7 +9,7 @@ A simple shopping list made with [Vue.js](https://vuejs.org/), [Heroicons](https
 * Edit items
   * Rejects edits that might cause duplicates
 * Remove items
-  * Confirm process prevents accidental item removal
+  * Confirm step prevents accidental item removal
 
 ## Project setup
 ```
