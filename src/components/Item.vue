@@ -86,6 +86,9 @@ export default {
         // reset myItem to the passed-in prop item in case the edit was rejected
         this.myItem = this.item;
       }
+      else if (this.myItem === this.originalItem) {
+        this.editing = false;
+      }
       else {
         this.rejectInput();
         this.myItem = this.originalItem;
